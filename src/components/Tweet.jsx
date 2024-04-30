@@ -1,36 +1,38 @@
+import ProfileImage from "./ProfileImage";
+import User from "./User";
+import TimeStamp from "./Timestamp";
+import Message from "./Message";
+import Actions from "./Actions";
+
 function Tweet() {
   return (
     <div className="tweet">
-      <img
-        src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/ih_logo.jpeg"
-        className="profile"
-        alt="profile"
-      />
+      <div>
+        <ProfileImage
+          image={
+            "https://i.imgur.com/b0EdHVV.jpg"
+          }
+        />
+      </div>
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
-          </span>
+          
+            <span className="user">
+              <User name={"Thoughts of Dog®"} handle={"@dog_feelings"} />
+            </span>
 
-          <span className="timestamp">Nov 30, 2020</span>
+            <TimeStamp time={"1h ago"}/>
+
         </div>
-
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
-
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment" data-testid="comment-icon"></i>
-          <i className="fas fa-retweet" data-testid="retweet-icon"></i>
-          <i className="far fa-heart" data-testid="heart-icon"></i>
-          <i className="fas fa-share" data-testid="share-icon"></i>
+        
+        <div>
+        <Message message={"the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company"}/>
         </div>
+        
+        <Actions />
+
       </div>
-
       <i className="fas fa-ellipsis-h"></i>
     </div>
   );
